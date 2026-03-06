@@ -1,0 +1,100 @@
+{
+  "personalInfo": {
+    "name": "Chris Saju Mulakkal",
+    "location": "Singapore",
+    "tagline": "Social Innovator & Passionate Learner",
+    "avatar": "/images/profile-pic.jpg",
+    "summary": "A well-rounded individual with strong leadership capabilities, cultural sensitivity, and a deep commitment to community service. Proven track record in managing large-scale cultural events, mentoring peers, and contributing to social causes.",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/chrissajum2007",
+      "github": "https://github.com/chrissajum2007",
+      "email": "chrisajum2007@gmail.com",
+      "portfolio": "https://ml-regression-engine.netlify.app/"
+    }
+  },
+  "featuredProject": {
+    "title": "ML Regression Engine",
+    "url": "https://ml-regression-engine.netlify.app/",
+    "description": "An end-to-end machine learning platform engineered to perform automated regression analysis on diverse, user-provided datasets. The engine features a dynamic processing pipeline that adapts to various inputs—from industrial logs to financial metrics—to deliver high-precision forecasting models. By bridging complex statistical frameworks with an intuitive interface, the tool empowers users to derive actionable insights from any structured data source."
+  },
+  "coreCompetencies": [
+    { "name": "Large-scale Event Management", "desc": "Coordinated ICS Night 2025 with 60+ participants." },
+    { "name": "Logistics & Operations", "desc": "Managed complex scheduling and equipment for major college events." },
+    { "name": "Cultural Advocacy", "desc": "Represented Indian culture through drama and exchange programs." },
+    { "name": "Peer Mentorship", "desc": "Guided junior cricketers and supported classmates as Physics Rep." },
+    { "name": "Empathetic Communication", "desc": "Engaged deeply with elderly residents at Geylang East Home." },
+    { "name": "Resilience & Adaptability", "desc": "Transformed training setbacks into performance gains on the field." }
+  ],
+  "education": {
+    "integratedProgramme": {
+      "alliance": "Victoria-Cedar Alliance (VCA)",
+      "schools": ["Victoria School", "Victoria Junior College"],
+      "programDescription": "A six-year integrated pathway for high-ability learners, focusing on 21st-century competencies and social innovation.",
+      "graduationYear": 2025
+    },
+    "certificates": [
+      "Victoria-Cedar Alliance Integrated Programme Graduation Certificate",
+      "Singapore-Cambridge GCE Advanced Level Certificate",
+      "School Graduation Certificate (Holistic Assessment)"
+    ]
+  },
+  "academicResults": {
+    "examination": "GCE A-Level",
+    "year": 2025,
+    "institution": "Victoria Junior College",
+    "subjects": [
+      { "name": "Physics", "level": "H2" },
+      { "name": "Mathematics", "level": "H2" },
+      { "name": "Chemistry", "level": "H2" },
+      { "name": "Economics", "level": "H1" },
+      { "name": "General Paper", "level": "H1" }
+    ]
+  },
+  "experience": {
+    "leadership": [
+      {
+        "role": "Drama Actors' Manager and Director",
+        "organization": "Indian Cultural Society (ICS)",
+        "period": "2024 - 2025",
+        "highlights": [
+          "Directed 'ICS Night 2025', managing a team of sixty participants.",
+          "Coordinated complex logistics and navigated interpersonal dynamics for large-scale performances.",
+          "Contributed to Taiwan Cultural Exchange Programme and Racial Harmony Day showcases."
+        ]
+      },
+      {
+        "role": "Physics Subject Representative",
+        "organization": "Victoria Junior College",
+        "period": "2024 - 2025",
+        "highlights": [
+          "Acted as a liaison between students and teachers to support academic needs.",
+          "Fostered a collaborative learning environment within the classroom."
+        ]
+      }
+    ],
+    "communityService": [
+      {
+        "project": "Project Astraea 2025",
+        "beneficiary": "Make-A-Wish Singapore",
+        "contribution": "Applied sales skills and business acumen to raise funds for children with critical illnesses."
+      },
+      {
+        "project": "Service Leadership Venture",
+        "beneficiary": "Geylang East Home for the Aged",
+        "period": "2024 - 2025",
+        "contribution": "Engaged with elderly residents with memory loss or hearing difficulties, demonstrating patience and empathy."
+      }
+    ],
+    "sports": [
+      {
+        "activity": "College Cricket Team",
+        "role": "Mentorship & A-Division Player",
+        "period": "2024 - 2025",
+        "highlights": [
+          "Demonstrated resilience through intensive training after a challenging 2024 season.",
+          "Mentored junior players and adapted to crucial team positions in 2025."
+        ]
+      }
+    ]
+  }
+}
