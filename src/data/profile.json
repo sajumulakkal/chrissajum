@@ -4,7 +4,7 @@
     "location": "Singapore",
     "tagline": "Social Innovator & Passionate Learner",
     "avatar": "/images/profile-pic.jpg",
-    "summary": "A well-rounded individual with strong leadership capabilities, cultural sensitivity, and a deep commitment to community service. Proven track record in managing large-scale cultural events, mentoring peers, and contributing to social causes.",
+    "summary": "A high-achieving individual and Officer Cadet with strong leadership capabilities, technical acumen in Machine Learning, and a deep commitment to community service. Proven track record in managing large-scale cultural events, leading teams in high-pressure environments, and contributing to social innovation.",
     "socials": {
       "linkedin": "https://linkedin.com/in/chrissajum2007",
       "github": "https://github.com/chrissajum2007",
@@ -18,11 +18,11 @@
     "description": "An end-to-end machine learning platform engineered to perform automated regression analysis on diverse, user-provided datasets. The engine features a dynamic processing pipeline that adapts to various inputs—from industrial logs to financial metrics—to deliver high-precision forecasting models. By bridging complex statistical frameworks with an intuitive interface, the tool empowers users to derive actionable insights from any structured data source."
   },
   "coreCompetencies": [
+    { "name": "Strategic Leadership", "desc": "Selected for Officer Cadet School (OCS) based on leadership merit and performance." },
     { "name": "Large-scale Event Management", "desc": "Coordinated ICS Night 2025 with 60+ participants." },
     { "name": "Logistics & Operations", "desc": "Managed complex scheduling and equipment for major college events." },
     { "name": "Cultural Advocacy", "desc": "Represented Indian culture through drama and exchange programs." },
     { "name": "Peer Mentorship", "desc": "Guided junior cricketers and supported classmates as Physics Rep." },
-    { "name": "Empathetic Communication", "desc": "Engaged deeply with elderly residents at Geylang East Home." },
     { "name": "Resilience & Adaptability", "desc": "Transformed training setbacks into performance gains on the field." }
   ],
   "education": {
@@ -52,6 +52,16 @@
   },
   "experience": {
     "leadership": [
+      {
+        "role": "Officer Cadet (OCT)",
+        "organization": "Singapore Armed Forces",
+        "period": "Mar 2026 - Present",
+        "highlights": [
+          "Selected for the Officer Cadet Course, representing the top tier of National Servicemen based on leadership potential and performance during BMT (Jan to Mar 2026).",
+          "Undergoing intensive command training at Officer Cadet School (OCS) to lead and manage platoon-sized elements.",
+          "Developing transferable skills in strategic planning, crisis management, and high-pressure decision-making."
+        ]
+      },
       {
         "role": "Drama Actors' Manager and Director",
         "organization": "Indian Cultural Society (ICS)",
