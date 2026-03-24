@@ -9,47 +9,37 @@ export default function Media() {
     const fetchVideos = async () => {
       try {
         setLoading(true);
-        // 1. Your Channel RSS URL
-        const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=UCl6FuXZXyRqaVZU4l3zRoOw`;
+        // 1. Define your Channel RSS URL
+        const channelId = "UCl6FuXZXyRqaVZU4l3zRoOw";
+        const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
         
-        // 2. Cache Buster: We add a random timestamp to the URL 
-        // This forces the proxy (allorigins) to fetch a fresh copy instead of a cached one.
-        const cacheBuster = `&t=${new Date().getTime()}`;
-        const PROXY_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(RSS_URL + cacheBuster)}`;
+        // 2. Use RSS2JSON API (Free tier) to convert the feed to JSON
+        // This is more stable than a raw CORS proxy for YouTube
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
         
-        const response = await fetch(PROXY_URL);
-        if (!response.ok) throw new Error("Network response was not ok");
-        
+        const response = await fetch(apiUrl);
         const data = await response.json();
-        
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(data.contents, "text/xml");
-        const entries = xml.querySelectorAll("entry");
 
-        if (entries.length === 0) {
-           setVideos([]);
-        } else {
-          const videoData = Array.from(entries).map((entry) => {
-            // Safer selection using namespaced tags if available, or fallbacks
-            const vId = entry.querySelector("videoId")?.textContent || 
-                        entry.getElementsByTagName("yt:videoId")[0]?.textContent;
-            const title = entry.querySelector("title")?.textContent || "Untitled Video";
-            const link = entry.querySelector("link")?.getAttribute("href") || "#";
-
+        if (data.status === 'ok') {
+          const videoData = data.items.map((item) => {
+            // Extract Video ID from the link (YouTube links usually end in ?v=ID)
+            const vId = item.link.split('v=')[1];
             return {
               id: vId,
-              title: title,
-              link: link,
-              thumbnail: `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`
+              title: item.title,
+              link: item.link,
+              thumbnail: item.thumbnail || `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`
             };
           });
-
-          setVideos(videoData.slice(0, 6)); 
+          setVideos(videoData.slice(0, 6));
+          setError(null);
+        } else {
+          throw new Error("Feed conversion failed");
         }
-        setLoading(false);
       } catch (err) {
-        console.error("Error fetching YouTube feed:", err);
-        setError("Could not load videos. Please try again later.");
+        console.error("YouTube Fetch Error:", err);
+        setError("Unable to sync YouTube feed. Click 'Watch on YouTube' below.");
+      } finally {
         setLoading(false);
       }
     };
@@ -88,8 +78,18 @@ export default function Media() {
                 ))}
               </div>
             ) : error ? (
-              <p className="text-red-500 text-center py-10 text-sm">{error}</p>
-            ) : videos.length > 0 ? (
+              <div className="text-center py-10">
+                <p className="text-slate-500 text-sm italic mb-4">{error}</p>
+                <a 
+                  href="https://www.youtube.com/@SajuMulakkal" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-red-600 text-white text-xs font-bold rounded-lg hover:bg-red-700 transition-colors"
+                >
+                  Watch on YouTube
+                </a>
+              </div>
+            ) : (
               videos.map((video) => (
                 <a 
                   key={video.id} 
@@ -103,7 +103,6 @@ export default function Media() {
                       src={video.thumbnail} 
                       alt={video.title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                      onError={(e) => { e.target.src = 'https://via.placeholder.com/120x90?text=Video'; }}
                     />
                   </div>
                   <div className="flex flex-col justify-center">
@@ -114,8 +113,6 @@ export default function Media() {
                   </div>
                 </a>
               ))
-            ) : (
-              <p className="text-slate-400 text-center py-10 italic">No videos found.</p>
             )}
           </div>
         </div>
