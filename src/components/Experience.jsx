@@ -1,59 +1,46 @@
 import data from '../data/profile.json';
 
-const Card = ({ title, subtitle, period, items, color }) => (
-  <div className={`bg-white p-6 rounded-2xl shadow-sm border-l-4 ${color} mb-6`}>
-    <div className="flex justify-between items-start mb-4">
-      <div>
-        <h3 className="text-xl font-bold text-slate-800">{title}</h3>
-        <p className="text-slate-600 font-medium">{subtitle}</p>
-      </div>
-      <span className="text-sm font-bold text-slate-400">{period}</span>
-    </div>
-    <ul className="space-y-2">
-      {items.map((item, i) => (
-        <li key={i} className="text-slate-600 flex items-start">
-          <span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-300 shrink-0" />
-          {item}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
 export default function Experience() {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold text-slate-800 mb-8 flex items-center">
-        Leadership & Impact
-      </h2>
+    <section className="max-w-4xl mx-auto my-12">
+      <h2 className="text-3xl font-bold text-slate-900 mb-8 border-b pb-4">Leadership & Experience</h2>
       
-      {/* Leadership Section */}
-      <div className="mb-10">
-        <h4 className="text-sm font-black uppercase tracking-widest text-red-600 mb-4">Leadership Roles</h4>
-        {data.experience.leadership.map((exp, i) => (
-          <Card 
-            key={i}
-            title={exp.organization}
-            subtitle={exp.role}
-            period={exp.period}
-            items={exp.highlights}
-            color="border-red-600"
-          />
+      {/* 1. Leadership Section */}
+      <div className="space-y-6 mb-12">
+        {data.experience.leadership.map((item, index) => (
+          <div key={index} className="p-6 bg-white shadow-md rounded-xl border border-gray-100">
+            <h3 className="text-xl font-bold text-slate-900">{item.role}</h3>
+            <p className="text-red-600 font-semibold">{item.organization} | {item.period}</p>
+            <ul className="mt-3 list-disc list-inside text-slate-600 space-y-1">
+              {item.highlights.map((bullet, i) => <li key={i}>{bullet}</li>)}
+            </ul>
+          </div>
         ))}
       </div>
 
-      {/* Sports Section */}
-      <div>
-        <h4 className="text-sm font-black uppercase tracking-widest text-blue-600 mb-4">Co-Curricular & Mentorship</h4>
-        {data.experience.sports.map((sport, i) => (
-          <Card 
-            key={i}
-            title={sport.activity}
-            subtitle={sport.role}
-            period={sport.period}
-            items={sport.highlights}
-            color="border-blue-600"
-          />
+      {/* 2. Community Service Section */}
+      <h2 className="text-2xl font-bold text-slate-800 mb-6">Community Service</h2>
+      <div className="grid md:grid-cols-2 gap-6 mb-12">
+        {data.experience.communityService.map((item, index) => (
+          <div key={index} className="p-6 bg-slate-50 rounded-xl border border-slate-200">
+            <h3 className="font-bold text-slate-900">{item.project}</h3>
+            <p className="text-sm text-slate-500 mb-2">{item.beneficiary} {item.period ? `| ${item.period}` : ''}</p>
+            <p className="text-slate-600 text-sm">{item.contribution}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* 3. Sports Section */}
+      <h2 className="text-2xl font-bold text-slate-800 mb-6">Sports & Mentorship</h2>
+      <div className="space-y-6">
+        {data.experience.sports.map((item, index) => (
+          <div key={index} className="p-6 bg-white shadow-sm rounded-xl border-l-4 border-red-500">
+            <h3 className="text-lg font-bold text-slate-900">{item.activity}</h3>
+            <p className="text-slate-500 italic mb-3">{item.role} ({item.period})</p>
+            <ul className="list-disc list-inside text-slate-600 text-sm space-y-1">
+              {item.highlights.map((bullet, i) => <li key={i}>{bullet}</li>)}
+            </ul>
+          </div>
         ))}
       </div>
     </section>
