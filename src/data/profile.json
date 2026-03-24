@@ -106,5 +106,24 @@
         ]
       }
     ]
+  },
+  "media": {
+    "photoAlbums": [
+      {
+        "title": "ICS Photos",
+        "url": "https://photos.app.goo.gl/iwpBhmpDp7fphGyX6",
+        "description": "Moments from the Indian Cultural Society and ICS Night 2025."
+      },
+      {
+        "title": "Altar Services",
+        "url": "https://photos.app.goo.gl/zXP9kX37qBcLbcwX8",
+        "description": "Gallery of service leadership and community engagement."
+      },
+      {
+        "title": "Sports Photos",
+        "url": "https://photos.app.goo.gl/RiMAe7KVM1iEfccD9",
+        "description": "Highlights from the Cricket A-Division season and team mentorship."
+      }
+    ]
   }
 }
