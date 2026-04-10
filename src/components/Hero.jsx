@@ -33,12 +33,7 @@ export default function Hero() {
           <a href={personalInfo.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-600 transition-colors">
             LinkedIn
           </a>
-          <a href={personalInfo.socials.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-slate-900 transition-colors">
-            GitHub
-          </a>
-          <a href={personalInfo.socials.portfolio} target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-red-50 text-red-600 rounded-full hover:bg-red-600 hover:text-white transition-all">
-            ML Engine
-          </a>
+     
           <a href={`mailto:${personalInfo.socials.email}`} className="text-slate-400 hover:text-red-600 transition-colors">
             Email
           </a>
