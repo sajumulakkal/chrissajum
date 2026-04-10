@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Hero from './components/Hero';
-import Project from './components/Project';
 import Education from './components/Education';
 import Results from './components/Results';
 import Experience from './components/Experience';
@@ -13,7 +12,6 @@ function App() {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
     { name: 'Education', href: '#education' },
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
@@ -79,9 +77,6 @@ function App() {
       </div>
 
       <main className="container mx-auto px-4 pb-20">
-        <section id="projects" className="scroll-mt-20">
-          <Project />
-        </section>
 
         <section id="education" className="scroll-mt-20">
           <Education />
